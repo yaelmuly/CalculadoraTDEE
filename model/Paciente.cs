@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
+using System.Linq; // ← AGREGADO: Necesario para usar .Any()
 
 namespace CalculadoraTDEE.model
-
 {
     public class Paciente : INotifyPropertyChanged
     {
@@ -266,7 +266,7 @@ namespace CalculadoraTDEE.model
                 result.Errores.Add("Actividad", "Debe seleccionar un nivel de actividad");
             }
 
-            result.EsValido = !result.Errores.Any();
+            result.EsValido = !result.Errores.Any(); // ← CORREGIDO: Ahora funciona con using System.Linq;
             return result;
         }
 

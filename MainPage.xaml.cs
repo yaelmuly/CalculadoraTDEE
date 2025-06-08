@@ -266,3 +266,44 @@ public partial class MainPage : ContentPage
         PesoError.IsVisible = false;
         EstaturaError.IsVisible = false;
         SexoError.IsVisible = false;
+        ActividadError.IsVisible = false;
+    }
+
+    private void MostrarErrores(Dictionary<string, string> errores)
+    {
+        foreach (var error in errores)
+        {
+            switch (error.Key)
+            {
+                case "Nombre":
+                    NombreError.Text = error.Value;
+                    NombreError.IsVisible = true;
+                    break;
+                case "Apellido":
+                    ApellidoError.Text = error.Value;
+                    ApellidoError.IsVisible = true;
+                    break;
+                case "Edad":
+                    EdadError.Text = error.Value;
+                    EdadError.IsVisible = true;
+                    break;
+                case "Peso":
+                    PesoError.Text = error.Value;
+                    PesoError.IsVisible = true;
+                    break;
+                case "Estatura":
+                    EstaturaError.Text = error.Value;
+                    EstaturaError.IsVisible = true;
+                    break;
+                case "Sexo":
+                    SexoError.Text = error.Value;
+                    SexoError.IsVisible = true;
+                    break;
+                case "Actividad":
+                    ActividadError.Text = error.Value;
+                    ActividadError.IsVisible = true;
+                    break;
+            }
+        }
+    }
+}
