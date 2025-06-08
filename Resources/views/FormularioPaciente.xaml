@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculadoraTDEE.views.FormularioPaciente">
@@ -10,7 +9,6 @@
         <Entry Placeholder="Peso (kg)" Keyboard="Numeric" Text="{Binding Peso}" />
         <Entry Placeholder="Estatura (cm)" Keyboard="Numeric" Text="{Binding Estatura}" />
 
-        <!-- Ejemplo de Picker para Sexo -->
         <Picker Title="Sexo" SelectedIndex="{Binding SexoIndex}">
             <Picker.Items>
                 <x:String>Masculino</x:String>
@@ -18,14 +16,13 @@
             </Picker.Items>
         </Picker>
 
-        <!-- Ejemplo de Picker para Nivel de Actividad -->
         <Picker Title="Nivel de Actividad" SelectedIndex="{Binding ActividadIndex}">
             <Picker.Items>
-                <x:String>Sedentario</x:String>
-                <x:String>Ligera</x:String>
-                <x:String>Moderada</x:String>
-                <x:String>Intensa</x:String>
-                <x:String>Muy intensa</x:String>
+                <x:String>Sedentario (1.2)</x:String>
+                <x:String>Ligera (1.375)</x:String>
+                <x:String>Moderada (1.55)</x:String>
+                <x:String>Intensa (1.725)</x:String>
+                <x:String>Muy intensa (1.9)</x:String>
             </Picker.Items>
         </Picker>
 

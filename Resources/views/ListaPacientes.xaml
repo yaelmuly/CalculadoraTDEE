@@ -1,18 +1,27 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculadoraTDEE.views.ListaPacientes">
 
-    <CollectionView ItemsSource="{Binding Pacientes}">
+    <CollectionView ItemsSource="{Binding Pacientes}" SelectionMode="Single" SelectedItem="{Binding PacienteSeleccionado, Mode=TwoWay}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout Padding="5" Spacing="2">
-                    <Label Text="{Binding Nombre}" FontAttributes="Bold" />
-                    <Label Text="{Binding Apellido}" />
-                    <Label Text="{Binding Edad}" />
-                    <Label Text="{Binding Peso}" />
-                    <Label Text="{Binding Estatura}" />
-                </VerticalStackLayout>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Nombre}" FontAttributes="Bold" />
+                        <Label Text="{Binding Apellido}" />
+                        <Label Text="{Binding Edad}" />
+                        <Label Text="{Binding Peso}" />
+                        <Label Text="{Binding Estatura}" />
+                        <Label Text="IMC: {Binding IMC}" />
+                        <Label Text="%GC: {Binding PorcentajeGrasaCorporal}" />
+                        <Label Text="Peso Ideal: {Binding PesoIdeal}" />
+                        <Label Text="TDEE: {Binding TDEE}" />
+                        <HorizontalStackLayout>
+                            <Button Text="Editar" Command="{Binding BindingContext.EditarCommand, Source={x:Reference Name=Lista}}" CommandParameter="{Binding .}" />
+                            <Button Text="Eliminar" Command="{Binding BindingContext.EliminarCommand, Source={x:Reference Name=Lista}}" CommandParameter="{Binding .}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

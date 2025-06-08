@@ -84,10 +84,10 @@ namespace CalculadoraTDEE.viewModels
                 Edad = int.Parse(Edad),
                 Peso = double.Parse(Peso),
                 Estatura = double.Parse(Estatura),
-                Sexo = SexoIndex == 0 ? "Masculino" : "Femenino",
-                NivelActividad = ObtenerNivelActividad(ActividadIndex),
-                DescripcionActividad = ObtenerDescripcionActividad(ActividadIndex)
+                SexoIndex = SexoIndex,
+                ActividadIndex = ActividadIndex
             };
+
 
             Pacientes.Add(paciente);
             LimpiarFormulario();
