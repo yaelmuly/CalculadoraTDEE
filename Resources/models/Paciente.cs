@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using System.Linq; // ← AGREGADO: Necesario para usar .Any()
+using System.Linq;
 
-namespace CalculadoraTDEE.model
+namespace CalculadoraTDEE.Resources.models
 {
     public class Paciente : INotifyPropertyChanged
     {
@@ -166,11 +166,11 @@ namespace CalculadoraTDEE.model
             {
                 if (Sexo == "Masculino")
                 {
-                    return Estatura - 100 - ((Estatura - 150) / 4);
+                    return Estatura - 100 - (Estatura - 150) / 4;
                 }
                 else
                 {
-                    return Estatura - 100 - ((Estatura - 150) / 2.5);
+                    return Estatura - 100 - (Estatura - 150) / 2.5;
                 }
             }
         }
@@ -179,7 +179,7 @@ namespace CalculadoraTDEE.model
         {
             get
             {
-                var baseValue = (Estatura * 6.25) + (Peso * 9.99) - (Edad * 4.92);
+                var baseValue = Estatura * 6.25 + Peso * 9.99 - Edad * 4.92;
                 return Sexo == "Masculino" ? baseValue + 5 : baseValue - 161;
             }
         }
